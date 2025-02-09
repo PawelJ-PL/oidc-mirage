@@ -1,0 +1,38 @@
+const privateKey = `-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5BkSq6+Jtpzha
+QFkrzJ7Xgqp9q06fpWbfLexy/of2Z2QkDa+3drjE4t+G1VW59J1DwYA3s89me2Yv
+42yLFX8l6hiaMWAu7ee5BCNjwBmazkvUf8liDa41ecDcXm9KbS/LcqCvKVqbhM6h
+ou3HF34g9lqr0qFzOTc/kCptJz/EM++nphqoe1lDmkzvtPQEVUzo2gJVTE7TeWay
+OIlygM8myb/jT0b46/ATOBWHdrC7MTIxhuhQocLM6CGA3l09J+NOtBu9hJF0xR6g
+0coOn7NSvZtO5Z6KWeWbKWvQihy4TTJUwPXycAACqx7Uzt690RKaPUKWPwYlQewI
+vcBb3LGPAgMBAAECggEAQSaw5VK8X4pDcJw6Cg86W366VBgPTm3qpGnCWdfAvoY3
+n+5l0n9unn2Y4hya3CkDe4lWgcbCID8Rg4lcfjkqlYox8ZGzYbMKJn8LiyNooLdF
+wmTg37Mbhd8Ch1aFb7q02rnZVPSF4D9Kl2YMvk9KbYbx9JDtouohxzMXjWoFrStX
+UWoXgBf0aFNV2AEYbOaXCYgWxN/jenpPjqCqTgZsQJy2xx1VcJXt3ze4q2hBsCkS
+vzQoujRWN4TrHKIQpqH6ySY2X0LeuHa866aXnKTbAeUxbPO7JG8bHEzQVbdUo7ym
+0PzOu4YK6OHl6yKYDF6Z0qUv/UXzuBUMqgTo7OkNeQKBgQDaFftFTAhpk5F4J8as
+tTN/wytEyy7r2OliylQ/tCZTFcOFHj3lz3O3HZOfW4NpBRvru4Y4w3kJi80CnVn4
+aUkX3JEl89G/cyYvEjacKEdNPsjxHXtqiItv/xdMQjz8a5bcECK7Eps4YVLzIiqm
+qf1+kSMuYKjQUV7mQ+nYhGM3/QKBgQDZMN+uz1N7MZ4+si1wYzugkq8UuN2hKek8
+/hvxogkI2eQaLfnYMacCSkcXMH/Xm99OsGjw+cMBKaRh0c9v1eSz6mB3dpiQDZAw
+Qot6t97MQtVx2TuFgfbuzKYwhdGQqbRBo3V3GJ7Ir1imYNKeymo5HLb24ncgfrFf
+K0HDXnJnewKBgQDROI9j7sqPRsQjKr2+SORMKNfk2qx8FQ/p98OVjeXKhbGajuXB
+CCGyRgyusCPE5+LeZ3wgDt+ameUnIgADgjZeTvttFpld+0FhnS6I51doMtiiAK+7
+B54F5wrZ3R4W57zGCDDZmcMR9sSWfmu+koygFOtUfeTWXYoWjIbWckOhnQKBgQDD
+Sd7XIDTAIO1ZEn0pAREsYLhsuY0OzNCbtyEJM9lLzB/+Kjjs3Dh/Jqqlf0Z0aANy
+jczOYMWm1fqoui77MChkXeo/gLPNU2TDABLKVWpP4AhsRhfvA900+26zUqAMo4sh
+Ogj0/X5IlOHxOD4p6Xd5wwgBFcBnx4NVP1/ye4oC4QKBgH58fmd4aaa8bnomhoU+
+AUf6DF19wX3ESSenBoNUSfFvJjT8BRFPdG6eueydLDIix7hOz+iLPYDb8+943LuJ
+5QTEzx38mIjct1D8AbbuUinuPr7reBf2k94/37p8ULgdMjzP/Tb/cERW9ekIIwLC
+LE0TP3Qot6Ra0pS5upYXu8l5
+-----END PRIVATE KEY-----`
+
+const publicKeyJwk = {
+    kty: 'RSA',
+    n: 'uQZEquvibac4WkBZK8ye14KqfatOn6Vm3y3scv6H9mdkJA2vt3a4xOLfhtVVufSdQ8GAN7PPZntmL-NsixV_JeoYmjFgLu3nuQQjY8AZms5L1H_JYg2uNXnA3F5vSm0vy3Kgrylam4TOoaLtxxd-IPZaq9Khczk3P5AqbSc_xDPvp6YaqHtZQ5pM77T0BFVM6NoCVUxO03lmsjiJcoDPJsm_409G-OvwEzgVh3awuzEyMYboUKHCzOghgN5dPSfjTrQbvYSRdMUeoNHKDp-zUr2bTuWeilnlmylr0IocuE0yVMD18nAAAqse1M7evdESmj1Clj8GJUHsCL3AW9yxjw',
+    e: 'AQAB',
+    alg: 'RS256',
+}
+
+export const encodedPrivateKey = Buffer.from(privateKey).toString('base64')
+export const encodedPublicKeyJwk = Buffer.from(JSON.stringify(publicKeyJwk)).toString('base64')

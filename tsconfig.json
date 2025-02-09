@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "lib": ["esnext"],
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "useDefineForClassFields": true,
+        "sourceMap": true,
+        "useUnknownInCatchVariables": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts"],
+    "exclude": ["node_modules"],
+    "ts-node": {
+        "files": true
+    }
+}
