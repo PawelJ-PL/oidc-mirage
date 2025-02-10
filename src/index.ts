@@ -6,9 +6,21 @@ const start = async () => {
 
     const app = createApp(deps)
 
-    app.listen(deps.appConfig.SERVER_PORT)
+    const controller = new AbortController()
+
+    app.listen({ port: deps.appConfig.SERVER_PORT, signal: controller.signal })
         .on('listening', () => deps.logger.info(`Server listening on port ${deps.appConfig.SERVER_PORT}`))
         .on('close', () => deps.logger.info('Server closed'))
+
+    process.on('SIGINT', () => {
+        deps.logger.info('Server shutting down (SIGINT)')
+        controller.abort()
+    })
+
+    process.on('SIGTERM', () => {
+        deps.logger.info('Server shutting down (SIGTERM)')
+        controller.abort()
+    })
 }
 
 void start()
